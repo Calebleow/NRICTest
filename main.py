@@ -36,6 +36,7 @@ def get_last_update_id(updates):
         update_ids.append(int(update["update_id"]))
     return max(update_ids)
 
+'''
 def echo_all(updates):
     for update in updates["result"]:
         try:
@@ -44,6 +45,7 @@ def echo_all(updates):
             send_message(text, chat)
         except Exception as e:
             print(e)
+'''
 
 def get_last_chat_id_and_text(updates):
     num_updates = len(updates["result"])
@@ -57,24 +59,12 @@ def send_message(text, chat_id):
     text = urllib.parse.quote_plus(text)
     url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
     get_url(url)
-    
-text, chat = get_last_chat_id_and_text(get_updates())
-send_message(text, chat)
-
-def main():
-    last_update_id = None
-    while True:
-        updates = get_updates(last_update_id)
-        if len(updates["result"]) > 0:
-            last_update_id = get_last_update_id(updates) + 1
-            echo_all(updates)
-        time.sleep(0.5)
 
 #Logical reasoning here
-def responses(input_text):
-    user_message = str(input_text)
+def responses(text):
+    user_message = str(text)
 
-    if user_message in ("S","T","F","G"):
+    if user_message in ("S*"):
         return (generate_last_letter(nric))
     else : 
         return ("Try again mortal")
@@ -107,7 +97,19 @@ def generate_last_letter(nric):
     if prefix == 'S' or prefix == 'T':
         return st_map[remainder]
 
-nric = text
+nric = get_json_from_url
+
+def main():
+    last_update_id = None
+    while True:
+        updates = get_updates(last_update_id)
+        if len(updates["result"]) > 0:
+            last_update_id = get_last_update_id(updates) + 1
+            responses(updates)
+        time.sleep(0.5)
+
+text, chat = get_last_chat_id_and_text(get_updates())
+send_message(text, chat)
 
 if __name__ == '__main__':
     main()
