@@ -1,7 +1,8 @@
+
 def responses(input_text):
     user_message = str(input_text)
 
-    if user_message in ("NRIC"):
+    if user_message in ("S","T","F","G"):
         return (generate_last_letter(nric))
     else : 
         return ("Try again mortal")
