@@ -1,6 +1,5 @@
 import Constants as keys
 from telegram.ext import *
-import Responses as R
 
 print("Botted")
 
@@ -12,12 +11,47 @@ def help_command(update, context):
     
 def handle_message(update, context):
     text = str(update.message.text).upper()
-    response = R.responses(text)
-
+    response = responses(text)
     update.message.reply_text(response)
 
 def error(update, context):
     print(f"Update {update} caused error {context.error}")
+
+def responses(input_text):
+    user_message = str(input_text).upper()
+
+    if user_message[0] in "STFG":
+        return (generate_last_letter(user_message))
+    else : 
+        return ("Try again mortal")
+
+def generate_last_letter(nric):
+    prefix = nric[0]
+    # suffix = nric[-1].upper()
+    number_string = nric[1:]
+    numbers = []
+
+    fg_map = ['X', 'W', 'U', 'T', 'R', 'Q', 'P', 'N', 'M', 'L', 'K']
+    st_map = ['J', 'Z', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A']
+
+    for n in number_string:
+        numbers.append(int(n))
+    weights = [2, 7, 6, 5, 4, 3, 2]
+
+    number_sum = 0
+    for w, n in zip(weights, numbers):
+        number_sum += n * w
+    
+    if prefix == 'T' or prefix == 'G':
+        number_sum += 4
+
+    remainder = number_sum % 11
+
+    if prefix == 'F' or prefix == 'G':
+        return fg_map[remainder]
+
+    if prefix == 'S' or prefix == 'T':
+        return st_map[remainder]
 
 def main():
     updater = Updater(keys.API_KEY, use_context=True)

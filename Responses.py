@@ -1,8 +1,9 @@
+from telegram.ext import*
 
 def responses(input_text):
-    user_message = str(input_text)
+    user_message = str(input_text).upper()
 
-    if user_message in ("S","T","F","G"):
+    if user_message[0] in "STFG":
         return (generate_last_letter(nric))
     else : 
         return ("Try again mortal")
