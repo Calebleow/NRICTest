@@ -3,12 +3,15 @@ from telegram.ext import *
 
 print("Botted")
 
+#corresponds to the /start command in TG
 def start_command(update, context):
     update.message.reply_text("Let's gooooooo!")
 
+#corresponds to the /help command in TG
 def help_command(update, context):
     update.message.reply_text('Type the NRIC you wanna check without the last letter')
-    
+
+#corresponds to any other text in TG    
 def handle_message(update, context):
     text = str(update.message.text).upper()
     response = responses(text)
@@ -17,6 +20,7 @@ def handle_message(update, context):
 def error(update, context):
     print(f"Update {update} caused error {context.error}")
 
+#logic reasoning whether to pass the checking function
 def responses(input_text):
     user_message = str(input_text).upper()
 
@@ -25,6 +29,7 @@ def responses(input_text):
     else : 
         return ("Try again, mortal")
 
+#actual checking function
 def generate_last_letter(nric):
     prefix = nric[0]
     # suffix = nric[-1].upper()
@@ -53,6 +58,7 @@ def generate_last_letter(nric):
     if prefix == 'S' or prefix == 'T':
         return st_map[remainder]
 
+#adds handlers for integration with Telegram
 def main():
     updater = Updater(keys.API_KEY, use_context=True)
     dp = updater.dispatcher
