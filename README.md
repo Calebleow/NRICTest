@@ -2,9 +2,9 @@
 
 An experiment to validate NRIC/FIN numbers using Telegram as the interface.
 
-It requires the Telegram Bot API to be installed
+The only files that are required is the main.py file and the Telegram Bot API.
 
-run the command below to install the library in the folder with the rest of the files.
+Run the command below to install the library in the folder with the rest of the files.
 
 pip install python-telegram-bot
 
@@ -24,3 +24,4 @@ v1.a - Branched the main code to try a different method for calling the Telegram
 v1.2 - Updates
 v.1.13 - Can't remember what I did
 v2 - First Working Version on the main branch
+v2.01 - Added arguments for format of text Bot will process in the checking function

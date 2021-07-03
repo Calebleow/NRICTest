@@ -4,7 +4,7 @@ from telegram.ext import *
 print("Botted")
 
 def start_command(update, context):
-    update.message.reply_text('lets go')
+    update.message.reply_text("Let's gooooooo!")
 
 def help_command(update, context):
     update.message.reply_text('Type the NRIC you wanna check without the last letter')
@@ -20,10 +20,10 @@ def error(update, context):
 def responses(input_text):
     user_message = str(input_text).upper()
 
-    if user_message[0] in "STFG":
+    if user_message[0] in "STFG" and len(user_message)==8:
         return (generate_last_letter(user_message))
     else : 
-        return ("Try again mortal")
+        return ("Try again, mortal")
 
 def generate_last_letter(nric):
     prefix = nric[0]
