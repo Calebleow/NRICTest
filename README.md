@@ -27,4 +27,4 @@ v1.2 - Updates
 v.1.13 - Can't remember what I did
 v2 - First Working Version on the main branch
 v2.01 - Added arguments for format of text Bot will process in the checking function
-v2.02 Comments added to notate what each chunk of code does
+v2.02 Comments added to notate what each chunk of code does, updates to Readme as well.
