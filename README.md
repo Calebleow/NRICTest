@@ -116,7 +116,7 @@ There is a branch that was done to try another method of calling the Telegram Bo
 
 ## Credits
 
-I had help doing this little project, my friend Will Ho taught me a fair bit and helped me on the checking function (visit him at [ikarus.sg](https://ikarus.sg/). 
+I had help doing this little project, my friend Will Ho taught me a fair bit and helped me on the checking function (visit him at [ikarus.sg](https://ikarus.sg/)). 
 
 The logic behind the checking function and how the Singapore NRIC/FIN numbers work was from an article by one Ivan Tay on medium, you can find that [article here](https://ivantay2003.medium.com/creation-of-singapore-identity-number-nric-24fc3b446145).
 
