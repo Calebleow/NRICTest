@@ -74,7 +74,7 @@ The bot can be adapted to be used to run any other function, you just have to ed
     else : 
         return ("Try again, mortal "+"(╯°□°)╯︵ ┻━┻")
  
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Change History
  
@@ -104,7 +104,21 @@ v2.03 Fun added
 
 v2.04 More readme updates, addition of Images folder for screenshots  
 
- 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ### Known Issues 
  
 The Telegram Bot's token is stored in the constants file. Although it is not immediately visible on the source code, it is still technically hard-coded in. This is not a secure way to store keys.
+
+There is a branch that was done to try another method of calling the Telegram Bot API. That method was abandoned as it quickly became too complicated. For purposes of learning, that branch will not be deleted.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Credits
+
+I had help doing this little project, my friend Will Ho taught me a fair bit and helped me on the checking function (visit him at [ikarus.sg](https://ikarus.sg/). 
+
+The logic behind the checking function and how the Singapore NRIC/FIN numbers work was from an article by one Ivan Tay on medium, you can find that [article here](https://ivantay2003.medium.com/creation-of-singapore-identity-number-nric-24fc3b446145).
+
+And to the many other resources I had to learn and copy from on the internet, I have lost track of all the things I had to look up because I have no idea what I am doing. 
+
