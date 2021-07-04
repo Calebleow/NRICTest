@@ -27,7 +27,7 @@ def responses(input_text):
     if user_message[0] in "STFG" and len(user_message)==8:
         return (generate_last_letter(user_message))
     else : 
-        return ("Try again, mortal")
+        return ("Try again, mortal "+"(╯°□°)╯︵ ┻━┻")
 
 #actual checking function
 def generate_last_letter(nric):
