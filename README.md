@@ -19,7 +19,7 @@ Have fun with it. Stay safe.
 
 Run the main.py file (I run it from Visual Studio Code) and it should show the following. You want to look for the "Botted" output.
 
-<img src = "Images/Botted.png">
+<img src = "images/Botted.png">
 
 Once you have done that, go ahead and look for @NRICTesterBot on your Telegram client. When you first start the bot, it should respond with text that corresponds to the /start command, in this case "Let's goooooo!" (this can be changed in main.py).
 
