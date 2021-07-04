@@ -23,11 +23,11 @@ Run the main.py file (I run it from Visual Studio Code) and it should show the f
 
 Once you have done that, go ahead and look for @NRICTesterBot on your Telegram client. When you first start the bot, it should respond with text that corresponds to the /start command, in this case "Let's goooooo!" (this can be changed in main.py).
 
-<img src = "Images/startSS.png" height = "300">
+<img src = "Images/startSS.png" height = "400">
 
 The bot will only run the checking function when it detects an input that fits the format I have coded in. Otherwise, the bot will mock you.
 
-<img src = "Images/nonNRICtextSS.png" height = "100">
+<img src = "Images/nonNRICtextSS.png" height = "200">
 
 When the bot does detect an NRIC/FIN number, it will spit back the last letter that would make the NRIC/FIN valid.
 
@@ -46,23 +46,23 @@ The implication of that is you can actually create hypothetical NRIC/FIN of some
 ## How it works - 
 
 The integration with Telegram's Bot API comes as a library we install and imported through the command on line 2
->`from telegram.ext import*`
+>from telegram.ext import*
 
 This allows for classes to be called in order for the script to receive updates from the Telegram servers using the Bot's Token as the identifier. This is done in line 62 to 74
 
->`def main():`
->   `updater = Updater(keys.API_KEY, use_context=True)`
->   `dp = updater.dispatcher`
->
->    `dp.add_handler(CommandHandler("start", start_command))`
->    `dp.add_handler(CommandHandler("help", help_command))`
->
->    `dp.add_handler(MessageHandler(Filters.text, handle_message))`
->
->    `dp.add_error_handler(error)`
->
->    `updater.start_polling()`
->    `updater.idle()`
+    def main():
+    updater = Updater(keys.API_KEY, use_context=True)
+    dp = updater.dispatcher
+
+    dp.add_handler(CommandHandler("start", start_command))
+    dp.add_handler(CommandHandler("help", help_command))
+
+    dp.add_handler(MessageHandler(Filters.text, handle_message))
+
+    dp.add_error_handler(error)
+
+    updater.start_polling()
+    updater.idle()
 
 The bot can be adapted to be used to run any other function, you just have to edit what responses the bot gives based on the text the user sends. This can be done in the following bits of code on line 23 to 30 in main.py.
  
