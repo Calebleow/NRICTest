@@ -1,4 +1,5 @@
 FROM python:3.8
+EXPOSE port:8080
 
 ADD main.py .
 
