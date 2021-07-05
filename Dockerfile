@@ -1,10 +1,7 @@
-FROM ubuntu:latest
+FROM python:3
 
-WORKDIR /app
+ADD main.py /
 
-COPY . /app
-
-RUN apt-get -y update  && apt-get install -y python
 RUN pip install python-telegram-bot
 
-CMD ["python", "main.py"]
+CMD [ "python", "./main.py" ]
