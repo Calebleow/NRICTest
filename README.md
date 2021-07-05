@@ -1,6 +1,6 @@
 # NRICTest 
  
-An experiment to validate NRIC/FIN numbers using Telegram as the interface.
+An experiment to validate NRIC/FIN numbers using Telegram as the interface. For educational purposes only.
 
 Run the command below to install the library in the folder containing the rest of the files.
 
